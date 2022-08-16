@@ -1,0 +1,167 @@
+﻿@model indra.Models.Servico
+
+@{
+    var error = ViewBag.error;
+    ViewData["Title"] = "Serviço";
+}
+
+@if (TempData["E_SER_C"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+        <strong>Erro! </strong> @TempData["E_SER_C"]
+    </div>
+}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h2 class="card-title"><i class="fa fa-plus-circle"></i> Adicionar Serviço</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <br />
+                        <div class="container">
+                            <div class="col-xs-12">
+                                <form asp-action="Criar">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col col-xs-12">
+                                            <label asp-for="Nome" class="label"></label>
+                                            <div>
+                                                <input asp-for="Nome" class="form-control" />
+                                                <span asp-validation-for="Nome" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col col-xs-12">
+                                            <label asp-for="Descricao" class="label"></label>
+                                            <div>
+                                                <!--<input asp-for="Descricao" class="form-control" />-->
+                                                <textarea asp-for="Descricao" class="form-control" rows="4"></textarea>
+                                                <span asp-validation-for="Descricao" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col col-xs-12">
+                                            <label asp-for="Valor" class="label"></label>
+                                            <div>
+                                                <input asp-for="Valor" maxlength="8" class="form-control" />
+                                                <span asp-validation-for="Valor" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col col-xs-12">
+                                            <button type="submit" class="btn btn-outline-dark btnVerde pull-right"><i class="fa fa-save"></i> Salvar</button>
+                                            <a asp-action="Index" class="btn btn-outline-dark btnCinza pull-left "><i class="fa fa-trash-o"></i> Cancelar</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/jquery-mask-plugin/src/jquery.mask.js" type="text/javascript" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            validaNumero();
+            $('#Valor').mask('000,00', { reverse: true });
+        });
+        $(document).ready(function () {
+            $("#alert").hide();
+            $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+                $("#alert").slideUp(600);
+            });
+        })
+
+        var validaNumero = function () {
+
+            $('#Valor').bind('copy paste', function (e) {
+                e.preventDefault(); return false;
+            });
+
+            $(document).on('keypress', '#Valor', function (evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+            });
+        }
+
+    </script>
+}
+
+<style>
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .bmd-form-group .form-control, .bmd-form-group label, .bmd-form-group input::placeholder {
+        line-height: 1.1;
+        color: black;
+    }
+</style>

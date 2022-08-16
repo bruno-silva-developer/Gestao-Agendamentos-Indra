@@ -1,0 +1,231 @@
+﻿@*@model IEnumerable<indra.Models.Agendamentos>*@
+@model indra.Models.Agendamentos 
+@inject indra.Web.Bibliotecas.LoginPessoaFisica pessoa
+
+@{
+    ViewData["Title"] = "Agendamento";
+    var cliente = pessoa.GetUsuario();
+}
+@if (TempData["E_AGENDA_C"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+        <strong>Erro! </strong> @TempData["E_AGENDA_C"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h3 class="card-title"><i class="fa fa-plus-circle"></i> Novo Agendamento</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <br />
+                        <form id="formCriar">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="SituacaoAgendamentoId" value="1" />
+                            <input type="hidden" asp-for="ClienteId" value="@cliente.PessoaFisica.Id" />
+                            <div class="form-group">
+                                <label class="control-label" id="labelAgendamento">Serviço</label>
+                                @Html.DropDownList("ServicoId", ViewBag.Servico, "", new
+                           {
+                               @class = "form-control"
+                           })
+                                <span asp-validation-for="ServicoId"></span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label class="control-label" id="labelAgendamento">Profissional</label>
+                                <select class="form-control" asp-for="ProfissionalId"></select>
+                                <span asp-validation-for="ProfissionalId"></span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label class="control-label" id="labelAgendamento">Horário</label>
+                                <input asp-for="Horario" class="form-control horario" />
+                                <span asp-validation-for="Horario"></span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label class="control-label" id="labelAgendamento"><i class="fa fa-dollar"></i> Valor</label>
+                                <br />
+                                <span id="valorServico" class="valores"></span>
+                            </div>
+                            <br />
+                            <br />
+                            <button type="button" onclick="criarAgendamento()" class="btn btnVerde pull-right"><i class="fa fa-save"></i> Salvar</button>
+                            <a asp-action="TelaPrincipal" asp-controller="Home" class="btn btnCinza pull-left"><i class="fa fa-arrow-left"></i> Voltar</a>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+    .valores {
+        color: #36b9cc;
+        margin-left: 0px;
+        font-size: x-large;
+        font-weight: 800;
+    }
+
+    #labelAgendamento {
+        font-size: inherit;
+        margin-top: 2px;
+    }
+
+    .horario {
+        color: black;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+        color: black;
+    }
+
+    .bmd-form-group .form-control, .bmd-form-group label, .bmd-form-group input::placeholder {
+        line-height: 1.1;
+        color: black;
+    }
+
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: 400;
+        font-weight: bold;
+    }
+
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #36b9cc 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #36b9cc 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #36b9cc;
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #36b9cc 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #36b9cc 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .btn-secondary {
+        background-color: #5a5c69;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+</style>
+
+<script>
+
+    var criarAgendamento = function () {
+        var url = '/Agendamentos/Criar';
+        var form = $('#formCriar');
+        var agendamento = {
+            /*Id: form.find('#Id').val(),*/
+            ClienteId: form.find('#ClienteId').val(),
+            ProfissionalId: form.find('#ProfissionalId').val(),
+            ServicoId: form.find('#ServicoId').val(),
+            Horario: form.find('#Horario').val(),
+            SituacaoAgendamentoId: form.find('#SituacaoAgendamentoId').val()
+        };
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: { agendamento: agendamento }
+        }).done(function (data) {
+            if (data.success) {
+                Swal.fire({
+                    title: 'Sucesso!',
+                    html: data.message,
+                    icon: 'success'
+                }).then(function () {
+                    window.location.reload();
+                    window.location = '/Home/TelaPrincipal';
+                });
+            } else {
+                Swal.fire(
+                    'Ops',
+                    data.message,
+                    'warning'
+                );
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+
+        $('#ServicoId').on('change', function () {
+            var id = $(this).val();
+            if (id) {
+                var url = '/Agendamentos/GetDadosServico';
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    data: { id }
+                }).done(function (retorno) {
+                    if (retorno.success) {
+                        $('#valorServico').text('R$ ' + retorno.valor.toFixed(2));
+                        var select = $('#ProfissionalId');
+                        select.html('');
+                        $.each(retorno.profissionais, function (i, profissional) {
+                            select.append('<option value="' + profissional.id + '">' + profissional.nome + '</option>');
+                        });
+                    } else {
+                        Swal.fire(
+                            'Ops',
+                            data.message,
+                            'warning'
+                        );
+                    }
+                });
+            }
+        });
+
+        $('#horario').on('change', function () {
+            debugger;
+            if ($('#horario').val()) {
+                if (new Date($('#horario').val()) < new Date()) {
+                    Swal.fire({
+                        title: 'Informação!',
+                        html: 'Data informada menor do que data atual',
+                        icon: 'warning'
+                    });
+                    $('#horario').val('');
+                }
+            }
+        });
+    });
+
+</script>

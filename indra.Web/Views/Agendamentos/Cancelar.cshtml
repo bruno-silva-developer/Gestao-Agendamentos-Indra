@@ -1,0 +1,120 @@
+﻿@model indra.Models.Agendamentos
+
+@{
+    ViewData["Title"] = "Agendamento";
+    var error = ViewBag.error;
+}
+
+<h1>Cancelar Agendamento</h1>
+
+<h3>Deseja realmente cancelar esse agendamento?</h3>
+<div>
+
+    <hr />
+    @if (TempData["E_AGENDA_C"] != null)
+    {
+        <!-- Error Alert -->
+        <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+            <strong>Erro! </strong> @TempData["E_AGENDA_C"]
+        </div>
+    }
+
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Profissional.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Profissional.Nome)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Servico.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Servico.Nome)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Horario)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Horario)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.SituacaoAgendamento.Situacao)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.SituacaoAgendamento.Situacao)
+        </dd>
+
+    </dl>
+    <form asp-action="ConfirmarCancelamento">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Confirmar" class="btn btn-danger" />
+
+    </form>
+    <a asp-action="Index">
+        <button class="btn btn-primary mt-2"
+                style="background: linear-gradient( 60deg, #00bcd4, #216cca);border: 0px">
+            Cancelar
+        </button>
+    </a>
+</div>
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+</script>

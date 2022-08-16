@@ -1,0 +1,58 @@
+﻿@model IEnumerable<indra.Models.Agendamentos>
+
+<table class="table table-bordered table-hover" style="width: 100%">
+
+    <thead class="thead-dark col col-xs-12">
+        <tr>
+            <th width="25%">
+                Cliente
+            </th>
+            <th width="20%">
+                Profissional
+            </th>
+            <th width="15%">
+                Serviço
+            </th>
+            <th width="10%">
+                Data
+            </th>
+            <th width="10%">
+                Situação
+            </th>
+            <th width="15%">
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profissional.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Servico.Nome)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Horario)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.SituacaoAgendamento.Situacao)
+                </td>
+                <td style="text-align:center">
+                    @if (item.SituacaoAgendamentoId == 1)
+                    {
+                        <button onclick="concluirAgendamento(@item.Id)" class="btn btnVerde btn-sm btn-squared-default"><i class="fa fa-check-square"></i></button>
+                        <button onclick="cancelarAgendamento(@item.Id)" class="btn btnVermelho btn-sm btn-squared-default"><i class="fa fa-ban"></i></button>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="clearfix"></div>

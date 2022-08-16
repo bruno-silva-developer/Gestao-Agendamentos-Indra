@@ -1,0 +1,54 @@
+﻿body {
+}
+
+.imagens .col-md-2 {
+    margin-bottom: 30px;
+}
+
+.imagens .btn-imagem-excluir {
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.imagens .btn-ocultar {
+    display: none;
+}
+
+.imagens .div{
+    text-align:center;
+    width:100%;
+}
+
+.imagens .img-thumbnail{
+    width: 100%;
+    border: none;
+}
+
+.imagens .container-img-thumbnail {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    border: 1px solid #CCC;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.input-file {
+    display: none;
+}
+
+.imagens .img-upload{
+    cursor: pointer !important;
+}
+
+.btn{
+    margin-left: 5px;
+}
+
+.footer {
+    background-color: #343A40;
+    height: 50px;
+}

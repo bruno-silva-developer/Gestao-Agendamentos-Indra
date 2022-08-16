@@ -1,0 +1,65 @@
+﻿@model IEnumerable<indra.Models.PessoaFisica>
+
+<div class="divTabela">
+    <table id="tabela" class="table table-bordered table-hover" style="width: 100%">
+        <thead class="thead-dark">
+            <tr>
+                <th width="3%" align="center">
+                    ID
+                </th>
+                <th width="30%" align="center">
+                    Nome
+                </th>
+                <th width="30%" align="center">
+                    Email
+                </th>
+                <th width="20%" align="center">
+                    Data de Criação
+                </th>
+                <th width="10%" align="center">
+                    Ativo
+                </th>
+                <th width="15%">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td style="text-align:center">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td style="text-align:center">
+                        @item.DtCriacao.ToShortDateString()
+                    </td>
+                    <td style="text-align:center">
+                        @if (item.Ativo)
+                        {<i class="fa fa-check text-success"></i> }
+                        else
+                        { <i class="fa fa-times text-danger"></i>}
+                    </td>
+                    <td style="text-align:center">
+                        <a asp-action="Editar" asp-route-id="@item.Id" class="btn btnCinza btn-sm btn-squared-default "><i class="fa fa-edit"></i></a>
+                        @if (item.Ativo)
+                        {
+                            <button onclick="desativarAdmin(@item.Id)" class="btn btnVermelho btn-sm btn-squared-default"><i class="fa fa-ban"></i></button>
+                        }
+                        else
+                        {
+                            <button onclick="ativarAdmin(@item.Id)" class="btn btnVerde btn-sm btn-squared-default"><i class="fa fa-unlock-alt"></i></button>
+                        }
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="clearfix"></div>

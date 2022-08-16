@@ -1,0 +1,106 @@
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.deps.json
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.json
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.dev.json
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csprojAssemblyReference.cache
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfoInputs.cache
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfo.cs
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CopyComplete
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.genruntimeconfig.cache
+D:\Projeto\indra 1.4\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.deps.json
+D:\Projeto\indra 1.4\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.json
+D:\Projeto\indra 1.4\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.dev.json
+D:\Projeto\indra 1.4\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.dll
+D:\Projeto\indra 1.4\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.pdb
+D:\Projeto\indra 1.4\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.dll
+D:\Projeto\indra 1.4\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.pdb
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csprojAssemblyReference.cache
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfoInputs.cache
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfo.cs
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CoreCompileInputs.cache
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CopyComplete
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.dll
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.pdb
+D:\Projeto\indra 1.4\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.genruntimeconfig.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.deps.json
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.json
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.dev.json
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csprojAssemblyReference.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfoInputs.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfo.cs
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CopyComplete
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.genruntimeconfig.cache
+D:\Projeto\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.deps.json
+D:\Projeto\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.json
+D:\Projeto\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.dev.json
+D:\Projeto\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.dll
+D:\Projeto\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.pdb
+D:\Projeto\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.dll
+D:\Projeto\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.pdb
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csprojAssemblyReference.cache
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfoInputs.cache
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfo.cs
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CoreCompileInputs.cache
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CopyComplete
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.dll
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.pdb
+D:\Projeto\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.genruntimeconfig.cache
+C:\Users\bruno\Desktop\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.deps.json
+C:\Users\bruno\Desktop\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.json
+C:\Users\bruno\Desktop\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.dev.json
+C:\Users\bruno\Desktop\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Desktop\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Desktop\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Desktop\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csprojAssemblyReference.cache
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfoInputs.cache
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfo.cs
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CopyComplete
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Desktop\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.genruntimeconfig.cache
+C:\Users\bruno\Downloads\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.deps.json
+C:\Users\bruno\Downloads\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.json
+C:\Users\bruno\Downloads\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.dev.json
+C:\Users\bruno\Downloads\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Downloads\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Downloads\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Downloads\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csprojAssemblyReference.cache
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfoInputs.cache
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfo.cs
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CopyComplete
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Downloads\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.genruntimeconfig.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfoInputs.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.AssemblyInfo.cs
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.deps.json
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.json
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.runtimeconfig.dev.json
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.dll
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Infra.pdb
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.CopyComplete
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.genruntimeconfig.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.csproj.AssemblyReference.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Infra\obj\Debug\netcoreapp3.1\indra.Infra.GeneratedMSBuildEditorConfig.editorconfig

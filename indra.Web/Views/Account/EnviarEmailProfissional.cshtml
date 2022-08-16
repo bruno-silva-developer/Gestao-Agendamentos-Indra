@@ -1,0 +1,165 @@
+﻿@model indra.Web.Models.EmailModel
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="imagem/x-icon" href="~/images/logo-indra.ico" />
+    <title>Gestão de Estética</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="~/sweetAlert/sweetalert.css" rel="stylesheet" />
+    <script src="~/sweetAlert/sweetalert.min.js"></script>
+</head>
+<html>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <div id="first">
+                    <div class="myform" style="background-color: #8ee6e6d1; border: 0px">
+                        <div class="logo mb-3">
+
+                            <div class="col-md-12 text-center">
+                                <h1 style="font-family: Roboto">ENVIAR EMAIL</h1>
+
+                            </div>
+                        </div>
+                        <form asp-action="EnviarEmailProfissional" asp-controller="Account">
+                            @if (TempData["E_EMAIL"] != null)
+                            {
+                                <!-- Error Alert -->
+                                <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+                                    <strong>Erro!</strong> @TempData["E_EMAIL"]
+                                </div>
+                            }
+                            @if (TempData["S_EMAIL"] != null)
+                            {
+                                <!-- Error Alert -->
+                                <div class="alert alert-success alert-dismissible fade show text-center" id="alert">
+                                    <strong>Sucesso! </strong> @TempData["S_EMAIL"]
+                                </div>
+                            }
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 text-center ">
+                                <button class="btn btn-primary btn-block"
+                                        style="background-color: 00bcd4;border: 0px; font-weight:bold;">
+                                    Enviar Email
+                                </button>
+                            </div>
+                        </form>
+                        <div class="form-group">
+                            <p class="text-center"><a asp-controller="Account" asp-action="LoginUser">Voltar</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .error {
+        color: red;
+    }
+
+    body {
+        padding-top: 5.0rem;
+        padding-bottom: 4.2rem;
+        background-image: url(https://i.imgur.com/5vy5C56.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+    }
+
+    a {
+        color: #0062cc;
+        text-decoration: none !important;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: 'Kaushan Script', cursive;
+    }
+
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+    }
+
+    .tx-tfm {
+        text-transform: uppercase;
+    }
+
+    .mybtn {
+        border-radius: 50px;
+    }
+
+    .login-or {
+        position: relative;
+        color: #aaa;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .span-or {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: -2px;
+        margin-left: -25px;
+        background-color: #fff;
+        width: 50px;
+        text-align: center;
+    }
+
+    .hr-or {
+        height: 1px;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    form .error {
+        color: #ff0000;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+</script>

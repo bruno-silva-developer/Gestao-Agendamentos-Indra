@@ -1,0 +1,112 @@
+﻿@model indra.Models.Agendamentos
+
+@{
+    ViewData["Title"] = "Agendamento";
+}
+<h4>Agendamento</h4>
+<hr />
+@if (TempData["ERRO_AGENDAMENTO_EDITAR"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+        <strong>Erro! </strong> @TempData["ERRO_CLIENTE_EDITAR"]
+    </div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Cliente.Nome" />
+            <input type="hidden" asp-for="Profissional.Nome" />
+            <input type="hidden" asp-for="Servico.Nome" />
+            <div class="form-group">
+                <label asp-for="Cliente.Nome" class="control-label"></label>
+                <select asp-for="Cliente.Nome" class="form-control" asp-items="ViewBag.Cliente" disabled></select>
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profissional.Nome" class="control-label"></label>
+                <select asp-for="Profissional.Nome" class="form-control" asp-items="ViewBag.Profissional" disabled></select>
+                <span asp-validation-for="ProfissionalId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Servico.Nome" class="control-label"></label>
+                <select asp-for="Servico.Nome" class="form-control" asp-items="ViewBag.Servico" disabled></select>
+                <span asp-validation-for="ServicoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Horario" class="control-label"></label>
+                <input asp-for="Horario" class="form-control" />
+                <span asp-validation-for="Horario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SituacaoAgendamento.Situacao" class="control-label"></label>
+                <select asp-for="SituacaoAgendamento.Situacao" class="form-control" asp-items="ViewBag.SituacaoAgendamento"></select>
+                <span asp-validation-for="SituacaoAgendamentoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="background-color: #00bcd4;border: 0px">Salvar</button>
+                <a asp-action="Index"><button type="button" class="btn btn-danger" style="background-color: #00bcd4; border: 0px">Cancelar</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+</script>

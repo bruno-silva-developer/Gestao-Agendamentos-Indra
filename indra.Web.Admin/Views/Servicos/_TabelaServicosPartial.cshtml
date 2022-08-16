@@ -1,0 +1,38 @@
+﻿@model IEnumerable<indra.Models.Servico>
+
+<table class="table table-bordered table-hover" style="width: 100%">
+    <thead class="thead-dark">
+        <tr>
+            <th width="5%">
+                Código
+            </th>
+            <th width="50%">
+                Nome
+            </th>
+            <th width="20%">
+                Valor
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td style="text-align:center">
+                    <a asp-action="Editar" asp-route-id="@item.Id" class="btn btnCinza btn-sm btn-squared-default "><i class="fa fa-edit"></i></a>
+                    <a onclick="excluirServico(@item.Id)" class="btn btnVermelho btn-sm btn-squared-default"><i class="fa fa-trash-o" style="color:white"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,258 @@
+﻿@model indra.Models.PessoaFisica
+@inject indra.Web.Bibliotecas.LoginPessoaFisica login
+
+@{
+    ViewData["Title"] = "Atualizar Perfil";
+    var perfil = login.GetUsuario();
+}
+
+@if (TempData["E_ATUA_PERFIL"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+        <strong>Erro! </strong> @TempData["E_ATUA_PERFIL"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h3 class="card-title"><i class="fa fa-user-circle"></i> Atualizar Perfil</h3>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <form id="formAtualizarPerfil">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" value="@perfil.PessoaFisica.Id" />
+                            <input type="hidden" asp-for="DtCriacao" value="@perfil.PessoaFisica.DtCriacao" />
+                            <input type="hidden" asp-for="Ativo" value="@perfil.PessoaFisica.Ativo" />
+                            <input type="hidden" asp-for="DtNascimento" value="@perfil.PessoaFisica.DtNascimento" />
+                            <input type="hidden" id="sexoVal" value="@perfil.PessoaFisica.Sexo" />
+                            <input type="hidden" asp-for="Tipo" value="@perfil.PessoaFisica.Tipo" />
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Nome" class="label"></label>
+                                    <div>
+                                        <input value="@perfil.PessoaFisica.Nome" asp-for="Nome" class="form-control" required title="Nome é obrigatório" />
+                                        <span asp-validation-for="Nome" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Email" class="label"></label>
+                                    <div>
+                                        <input value="@perfil.PessoaFisica.Email" asp-for="Email" class="form-control" required title="Email é obrigatório" />
+                                        <span asp-validation-for="Email" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label class="label">Sexo</label>
+                                    <div>
+                                        <select id="Sexo" class="form-control">
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                        </select>
+                                        <span asp-validation-for="Sexo" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Cpf" class="label"></label>
+                                    <div>
+                                        <input value="@perfil.PessoaFisica.Cpf" asp-for="Cpf" id="Cpf" class="form-control" required title="Cpf é obrigatório" />
+                                        <span asp-validation-for="Cpf" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Celular" class="label"></label>
+                                    <div>
+                                        <input value="@perfil.PessoaFisica.Celular" asp-for="Celular" id="Celular" class="form-control" required title="Celular é obrigatório" />
+                                        <span asp-validation-for="Celular" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <label asp-for="Senha" class="label"></label>
+                                    <div>
+                                        <input value="@perfil.PessoaFisica.Senha" asp-for="Senha" class="form-control" required title="Senha é obrigatória" />
+                                        <span asp-validation-for="Senha" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-6 ">
+                                    <label asp-for="ConfirmacaoSenha"></label>
+                                    <div>
+                                        <input value="@perfil.PessoaFisica.ConfirmacaoSenha" asp-for="ConfirmacaoSenha" class="form-control" required title="Confirmação de Senha é obrigatória" />
+                                        <span asp-validation-for="ConfirmacaoSenha" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button onclick="atualizarPerfil()" type="button" class="btn btnVerde pull-right "><i class="fa fa-save"></i> Salvar</button>
+                            <a asp-action="Perfil" class="btn btnCinza pull-left"><i class="fa fa-arrow-left"></i> Voltar</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+    @@media (max-width: 768px) {
+        .pull-right {
+            float: left;
+        }
+
+        .pull-left {
+            float: right;
+            margin-top: 5px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .col-md label {
+        color: black;
+    }
+
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: 400;
+    }
+
+    .bmd-form-group .form-control, .bmd-form-group label, .bmd-form-group input::placeholder {
+        color: black;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #36b9cc 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+        margin-top: -10px;
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #36b9cc 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #36b9cc 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #36b9cc 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #36b9cc 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+        color: black;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js" type="text/javascript" asp-append-version="true"></script>
+<script>
+    var atualizarPerfil = function () {
+        var url = '/Home/AtualizarPerfil';
+        var form = $('#formAtualizarPerfil');
+        var pessoa = {
+            Id: form.find('#Id').val(),
+            DtCriacao: form.find('#DtCriacao').val(),
+            Ativo: form.find('#Ativo').val(),
+            Nome: form.find('#Nome').val(),
+            Email: form.find('#Email').val(),
+            DtNascimento: form.find('#DtNascimento').val(),
+            Sexo: form.find('#Sexo').val(),
+            Celular: form.find('#Celular').val(),
+            Senha: form.find('#Senha').val(),
+            ConfirmacaoSenha: form.find('#ConfirmacaoSenha').val(),
+            Cpf: form.find('#Cpf').val(),
+            Tipo: form.find('#Tipo').val()
+        };
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: { pessoa: pessoa }
+        }).done(function (data) {
+            if (data.success) {
+                Swal.fire({
+                    title: 'Sucesso!',
+                    html: data.message,
+                    icon: 'success'
+                }).then(function () {
+                    window.location.reload();
+                    window.location = '/Home/Perfil';
+                });
+            } else {
+                Swal.fire(
+                    'Ops',
+                    data.message,
+                    'warning'
+                );
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        var sexoVal = $('#sexoVal').val();
+        $('#Sexo').val(sexoVal).change();
+    });
+
+    $(document).ready(function () {
+        $('#Cpf').mask('000.000.000-00');
+        $('#Celular').mask('(00) 00000-0000');
+    });
+
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    });
+
+</script>
+
+

@@ -1,0 +1,42 @@
+﻿@{ ViewData["Title"] = "Relatório"; }
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h2 class="card-title">Relatório de Profissionais</h2>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <form method="post">
+                            <div class="row">
+                                <div class=" col col-xs-12">
+                                    <button type="submit" id="btnPDF" class="btn btn-outline-dark btnVerde">
+                                        <i class="fa fa-print"></i> Imprimir
+                                    </button>
+
+                                    <a asp-controller="Home" asp-action="Dashboard" class="btn btn-outline-dark btnCinza">
+                                        <i class="fa fa-sign-out"></i> Voltar
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-group .bmd-label-static {
+        top: -10px;
+        font-weight: bold;
+    }
+    .btn-default {
+        background-color: #5a5c69;
+    }
+</style>

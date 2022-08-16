@@ -1,0 +1,85 @@
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.deps.json
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.json
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.dev.json
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csprojAssemblyReference.cache
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfoInputs.cache
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfo.cs
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Google Drive\FANAP\Projeto III\Gestao_Indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.genruntimeconfig.cache
+D:\Projeto\indra 1.4\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.deps.json
+D:\Projeto\indra 1.4\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.json
+D:\Projeto\indra 1.4\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.dev.json
+D:\Projeto\indra 1.4\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.dll
+D:\Projeto\indra 1.4\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.pdb
+D:\Projeto\indra 1.4\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csprojAssemblyReference.cache
+D:\Projeto\indra 1.4\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfoInputs.cache
+D:\Projeto\indra 1.4\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfo.cs
+D:\Projeto\indra 1.4\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.CoreCompileInputs.cache
+D:\Projeto\indra 1.4\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.dll
+D:\Projeto\indra 1.4\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.pdb
+D:\Projeto\indra 1.4\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.genruntimeconfig.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.deps.json
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.json
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.dev.json
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csprojAssemblyReference.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfoInputs.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfo.cs
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Downloads\indra-front_versao03\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.genruntimeconfig.cache
+D:\Projeto\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.deps.json
+D:\Projeto\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.json
+D:\Projeto\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.dev.json
+D:\Projeto\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.dll
+D:\Projeto\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.pdb
+D:\Projeto\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csprojAssemblyReference.cache
+D:\Projeto\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfoInputs.cache
+D:\Projeto\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfo.cs
+D:\Projeto\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.CoreCompileInputs.cache
+D:\Projeto\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.dll
+D:\Projeto\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.pdb
+D:\Projeto\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.genruntimeconfig.cache
+C:\Users\bruno\Desktop\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.deps.json
+C:\Users\bruno\Desktop\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.json
+C:\Users\bruno\Desktop\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.dev.json
+C:\Users\bruno\Desktop\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Desktop\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Desktop\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csprojAssemblyReference.cache
+C:\Users\bruno\Desktop\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfoInputs.cache
+C:\Users\bruno\Desktop\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfo.cs
+C:\Users\bruno\Desktop\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Desktop\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Desktop\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Desktop\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.genruntimeconfig.cache
+C:\Users\bruno\Downloads\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.deps.json
+C:\Users\bruno\Downloads\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.json
+C:\Users\bruno\Downloads\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.dev.json
+C:\Users\bruno\Downloads\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Downloads\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Downloads\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csprojAssemblyReference.cache
+C:\Users\bruno\Downloads\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfoInputs.cache
+C:\Users\bruno\Downloads\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfo.cs
+C:\Users\bruno\Downloads\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Downloads\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Downloads\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Downloads\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.genruntimeconfig.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.deps.json
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.json
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.runtimeconfig.dev.json
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\bin\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfoInputs.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.AssemblyInfo.cs
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.dll
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.pdb
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.genruntimeconfig.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.csproj.AssemblyReference.cache
+C:\Users\bruno\Google Drive\PROGRAMAÇÃO\Projeto Interdisciplinar ADS - Bruno Carlos da Silva\Aplicação\indra\indra.Models\obj\Debug\netcoreapp3.1\indra.Models.GeneratedMSBuildEditorConfig.editorconfig

@@ -1,0 +1,150 @@
+﻿@model indra.Models.ProfissionalServico
+
+@{ ViewData["Title"] = "Profissional";
+    var error = ViewBag.error; }
+
+@if (TempData["E_ATRI_SER"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+        <strong>Erro! </strong> @TempData["E_ATRI_SER"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h2 class="card-title">Atribuir Serviço</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <br />
+                        <form asp-action="AtribuirServico">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="row">
+                                <label class="labelProfissional">Nome do Profissional: </label>
+                                <div class="col-xs-12" id="div-select">
+                                    <select asp-for="ProfissionalId" asp-items="ViewBag.Profissional" class="valoresProfissionais"></select>
+                                    <span asp-validation-for="ProfissionalId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="labelServico">Nome do Serviço: </label>
+                                <div class="col-xs-12" id="div-select">
+                                    <select asp-for="ServicoId" asp-items="ViewBag.Servico" class="valoresServicos"></select>
+                                    <span asp-validation-for="ServicoId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <button type="submit" class="btn btn-outline-dark btnVerde pull-right"><i class="fa fa-save"></i> Salvar</button>
+                            <a asp-action="Index" class="btn  btn-outline-dark btnCinza pull-left "><i class="fa fa-arrow-left"></i></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    });
+</script>
+
+<style>
+    .pull-right {
+        float: right;
+    }
+
+    .btn.btn-secondary {
+        color: #ffffff;
+        background-color: #5a5c69;
+        border-color: #ccc;
+        box-shadow: 0 2px 2px 0 rgb(250 250 250 / 14%), 0 3px 1px -2px rgb(250 250 250 / 20%), 0 1px 5px 0 rgb(250 250 250 / 12%);
+    }
+
+    .btn.btn-secondary:hover {
+            background-color: #5a5c69;
+            border: 0px;
+            color: #ffffff;
+    }
+
+    .form-check, label {
+        font-size: 20px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: 400;
+    }
+
+    .labelProfissional {
+        margin-top: 10px;
+        margin-left: 15px;
+        font-weight: bold;
+    }
+
+    .labelServico {
+        margin-top: 27px;
+        margin-left: 15px;
+        font-weight: bold;
+    }
+
+    .valoresProfissionais {
+        background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat hsl(0deg 0% 91%); /* Imagem de fundo (Seta) */
+        background-position: 235px center; /*Posição da imagem do background*/
+        width: 270px; /* Tamanho do select, maior que o tamanho da div "div-select" */
+        height: 48px; /* altura do select, importante para que tenha a mesma altura em todo os navegadores */
+        font-family: Arial, Helvetica, sans-serif; /* Fonte do Select */
+        font-size: 18px; /* Tamanho da Fonte */
+        padding: 13px 20px 13px 12px; /* Configurações de padding para posicionar o texto no campo */
+        color: #000; /* Cor da Fonte */
+        text-indent: 0.01px; /* Remove seta padrão do FireFox */
+        text-overflow: ""; /* Remove seta padrão do FireFox */
+        margin-left: 17px;
+        border: black;
+    }
+
+    .valoresServicos {
+        background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat hsl(0deg 0% 91%); /* Imagem de fundo (Seta) */
+        background-position: 235px center; /*Posição da imagem do background*/
+        width: 270px; /* Tamanho do select, maior que o tamanho da div "div-select" */
+        height: 48px; /* altura do select, importante para que tenha a mesma altura em todo os navegadores */
+        font-family: Arial, Helvetica, sans-serif; /* Fonte do Select */
+        font-size: 18px; /* Tamanho da Fonte */
+        padding: 13px 20px 13px 12px; /* Configurações de padding para posicionar o texto no campo */
+        color: #000; /* Cor da Fonte */
+        text-indent: 0.01px; /* Remove seta padrão do FireFox */
+        text-overflow: ""; /* Remove seta padrão do FireFox */
+        margin-top: 20px;
+        margin-left: 56px;
+        border: black;
+    }
+
+    @@media (max-width: 768px) {
+        .valoresProfissionais {
+            margin-left: 17px;
+            width: 230px; 
+            background-position: 196px center; 
+            margin-top: 0px;
+        }
+        .valoresServicos {
+            margin-left: 17px;
+            width: 230px;
+            background-position: 196px center;
+            margin-top: 0px;
+        }
+    }
+
+    option {
+        align-items: center;
+    }
+</style>

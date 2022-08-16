@@ -1,0 +1,213 @@
+﻿@model indra.Models.PessoaFisica
+
+@{ ViewData["Title"] = "Cliente";
+}
+
+@if (TempData["E_CLIE_C"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+        <strong>Erro! </strong> @TempData["E_CLIE_C"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h2 class="card-title"><i class="fa fa-plus-circle"></i> Cadastro de Clientes</h2>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <form asp-action="Criar">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Nome" class="label"></label>
+                                    <div>
+                                        <input asp-for="Nome" class="form-control" required title="Nome é obrigatório" />
+                                        <span asp-validation-for="Nome" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Email" class="label"></label>
+                                    <div>
+                                        <input asp-for="Email" class="form-control" required title="Email é obrigatório" />
+                                        <span asp-validation-for="Email" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="DtNascimento" class="label"></label>
+                                    <div>
+                                        <input asp-for="DtNascimento" type="date" class="form-control" type="date" required title="Data de Nascimento é obrigatória" />
+                                        <span asp-validation-for="DtNascimento" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Sexo" class="label"></label>
+                                    <div>
+                                        <select asp-for="Sexo" class="form-control" id="Sexo">
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                        </select>
+                                        <span asp-validation-for="Sexo" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Senha" class="label"></label>
+                                    <div>
+                                        <input asp-for="Senha" class="form-control" type="password" required title="Senha é obrigatória" />
+                                        <span asp-validation-for="Senha" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="ConfirmacaoSenha" class="label"></label>
+                                    <div>
+                                        <input asp-for="ConfirmacaoSenha" class="form-control" type="password" required title="Confirmação de Senha é obrigatória" />
+                                        <span asp-validation-for="ConfirmacaoSenha" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Cpf" class="label"></label>
+                                    <div>
+                                        <input id="Cpf" asp-for="Cpf" class="form-control" required title="CPF é obrigatório" />
+                                        <span asp-validation-for="Cpf" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Celular" class="label"></label>
+                                    <div>
+                                        <input id="Celular" asp-for="Celular" class="form-control" required title="Celular é obrigatório" />
+                                        <span asp-validation-for="Celular" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <button type="submit" class="btn btn-outline-dark btnVerde pull-right"><i class="fa fa-save"></i> Salvar</button>
+                                    <a asp-action="Index" class="btn btn-outline-dark btnCinza pull-left"><i class="fa fa-arrow-left"></i> Voltar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    select#Sexo {
+        color: black;
+    }
+
+    input#DtNascimento {
+        color: black;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .form-group .bmd-label-static {
+        top: -20px;
+    }
+
+    label.col-md-2.col-form-label.bmd-label-static {
+        color: black;
+    }
+
+    hr {
+        margin-top: 0.75rem;
+        margin-bottom: 2.5rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .bmd-form-group .form-control, .bmd-form-group label, .bmd-form-group input::placeholder {
+        line-height: 1.1;
+        color: black;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+        color: black;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js" type="text/javascript" asp-append-version="true"></script>
+<script>
+    $(document).ready(function () {
+        $('#Cpf').mask('000.000.000-00');
+        $('#Celular').mask('(00) 00000-0000');
+    });
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

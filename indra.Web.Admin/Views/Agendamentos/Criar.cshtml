@@ -1,0 +1,216 @@
+﻿@model indra.Models.Agendamentos
+
+@{
+    ViewData["Title"] = "Agendamento";
+    var error = ViewBag.error;
+}
+@if (TempData["E_AGENDA_C"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+        <strong>Erro! </strong> @TempData["E_AGENDA_C"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h3 class="card-title"><i class="fa fa-plus-circle"></i> Criar Agendamento</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <br />
+                        <form asp-action="Criar">
+                            <input type="hidden" asp-for="SituacaoAgendamentoId" value="1" />
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <!--Botão para criar novo cliente-->
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label class="label" asp-for="ClienteId">Cliente</label>
+                                    <div class=" col col-xs-2">
+                                        <select required class="form-control" asp-for="ClienteId" asp-items="ViewBag.Cliente"></select>
+                                        <span asp-validation-for="ClienteId" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                                <div class=" col col-xs-2">
+                                    <a asp-controller="Clientes" asp-action="Criar" class="btn btn-success btnAzul" border: 0px">
+                                        <i class="fa fa-plus-circle"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--Botão para criar novo serviço-->
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label class="label" asp-for="ServicoId">Serviço</label>
+                                    <div class=" col col-xs-2">
+                                        @Html.DropDownList("ServicoId", ViewBag.Servico, "", new
+                                        {
+                                            @class = "form-control",
+                                            required = true
+                                        })
+                                        @*<select class="form-control" asp-for="ServicoId" asp-items="ViewBag.Servico"></select>*@
+                                        <span asp-validation-for="ServicoId" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                                <div class=" col col-xs-2">
+                                    <a asp-controller="Servicos" asp-action="Criar" class="btn btn-success btnAzul" border: 0px"><i class="fa fa-plus-circle"></i></a>
+                                </div>
+                            </div>
+
+                            <!--Botão para criar novo profissional-->
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label class="label" asp-for="ProfissionalId">Profissional</label>
+                                    <div class=" col col-xs-2">
+                                        <select required class="form-control" asp-for="ProfissionalId"></select>
+                                        <span asp-validation-for="ProfissionalId" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                                <div class=" col col-xs-2">
+                                    <a asp-controller="Profissionais" asp-action="Criar" class="btn btn-success btnAzul" border: 0px"><i class="fa fa-plus-circle"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <label asp-for="Horario" class="label"></label>
+                                    <div class=" col col-xs-2">
+                                        <input asp-for="Horario" class="form-control" />
+                                        <span asp-validation-for="Horario" class="text-danger col col-xs-12"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <button type="submit" class="btn btn-outline-dark btnVerde pull-right"><i class="fa fa-save"></i> Salvar</button>
+                                    <a asp-action="Index" class="btn btn-outline-dark btnCinza pull-left"><i class="fa fa-arrow-left"></i> Voltar</a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<style>
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+        color: black;
+    }
+
+    .bmd-form-group .form-control, .bmd-form-group label, .bmd-form-group input::placeholder {
+        line-height: 1.1;
+        color: black;
+    }
+
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: 400;
+        font-weight: bold;
+    }
+
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+
+        $('#ServicoId').on('click', function () {
+
+            var id = $(this).val();
+            if (id) {
+                var url = '/Agendamentos/GetDadosServico';
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    data: { id }
+                }).done(function (retorno) {
+                    if (retorno.success) {
+                        $('#valorServico').text('R$ ' + retorno.valor.toFixed(2));
+                        var select = $('#ProfissionalId');
+                        select.html('');
+                        $.each(retorno.profissionais, function (i, profissional) {
+                            select.append('<option value="' + profissional.id + '">' + profissional.nome + '</option>');
+                        });
+                    } else {
+                        Swal.fire(
+                            'Ops',
+                            data.message,
+                            'warning'
+                        );
+                    }
+                });
+            }
+        });
+
+        $('#Horario').on('change', function () {
+            if ($('Horario').val()) {
+                if (new Date($('#Horario').val()) < new Date()) {
+                    Swal.fire(
+                        'Informação',
+                        'Data menor do que data atual',
+                        'warning'
+                    );
+                }
+            }
+        });
+
+    });
+</script>

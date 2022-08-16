@@ -1,0 +1,166 @@
+﻿@inject indra.Web.Admin.Bibliotecas.LoginAdmin login
+@model indra.Models.PessoaFisica
+
+@{
+    ViewData["Title"] = "Perfil";
+    var admin = login.GetAdmin();
+}
+<head>
+    <title>Perfil</title>
+    <link rel="icon" type="image/png" href="/images/logo-indra.ico">
+</head>
+
+@if (TempData["S_ATUA_PERFIL"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-success alert-dismissible fade show text-center" id="alert">
+        <strong>Sucesso!</strong> @TempData["S_ATUA_PERFIL"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h2 class="card-title"><i class="fa fa-user-circle"></i> Perfil</h2>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Nome</label>
+                                <div>
+                                    <span id="perfil" class="col col-xs-12">@ViewBag.Nome</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Email</label>
+                                <div>
+                                    <span id="perfil" class="col col-xs-12">@ViewBag.Email</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Data de Nascimento</label>
+                                <div>
+                                    <span id="perfil" class="col col-xs-12">@ViewBag.DtNascimento</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Email</label>
+                                <div>
+                                    <span id="perfil" class="col col-xs-12">@ViewBag.Sexo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Email</label>
+                                <div>
+                                    <span id="perfil" class="col col-xs-12">@ViewBag.Cpf</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Email</label>
+                                <div>
+                                    <span id="perfil" class="col col-xs-12">@ViewBag.Celular</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a asp-controller="Home" asp-action="AtualizarPerfil">
+                            <button class="btn btnAzul pull-right">
+                                Atualizar Perfil
+                            </button>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #perfil {
+        margin-left: -15px;
+        font-family: 'Arial','sans-serif';
+        font-weight: 700;
+        color: #00bcd4;
+    }
+
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+        margin-top: -10px;
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+        .form-control[disabled], fieldset[disabled] .form-control, .form-group .form-control[disabled], fieldset[disabled] .form-group .form-control {
+            background-color: transparent;
+            cursor: not-allowed;
+            border-bottom: 1px dotted #d2d2d2;
+            background-repeat: no-repeat;
+            color: black;
+        }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: 400;
+        font-weight: bold;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+</script>

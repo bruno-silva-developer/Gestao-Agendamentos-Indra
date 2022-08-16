@@ -1,0 +1,84 @@
+﻿@{ ViewData["Title"] = "Relatório"; }
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+
+                        <h2 class="card-title"><i class="fa fa-print"></i>Relatório de Agendamentos</h2>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <form method="post">
+                            <div class="form-group">
+                                <label style="color:black" class="control-label">Data início</label>
+                                <input class="form-control" type="date" name="dataInicio" required />
+                            </div>
+                            <div class="form-group">
+                                <label style="color:black" class="control-label">Data fim</label>
+                                <input class="form-control" type="date" name="dataFim" required />
+                            </div>
+                            <div class="form-group">
+                                <label style="color:black" class="control-label">Situação do agendamento</label>
+                                <select name="situacao" id="situacao" class="form-control">
+                                    <option value="0">Todos</option>
+                                    <option value="1">Aguardando</option>
+                                    <option value="2">Concluído</option>
+                                    <option value="3">Cancelado</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class=" col col-xs-12">
+                                    <button type="submit" id="btnPDF" class="btn btn-outline-dark btnVerde pull-right">
+                                        <i class="fa fa-print"></i> Imprimir
+                                    </button>
+
+                                    <a asp-controller="Home" asp-action="Dashboard" class="btn btn-outline-dark btnCinza pull-left">
+                                        <i class="fa fa-sign-out"></i> Voltar
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #AAAAAA;
+        font-weight: 400;
+        font-weight: bold;
+    }
+
+    .form-group .bmd-label-static {
+        top: -10px;
+        font-weight: bold;
+    }
+
+    .btn-default {
+        background-color: #5a5c69;
+    }
+
+    .bmd-form-group .form-control, .bmd-form-group label, .bmd-form-group input::placeholder {
+        line-height: 1.1;
+        color: black;
+    }
+
+    select {
+        margin-top: -15px;
+    }
+
+    #situacao {
+        margin-top: -10px;
+        color: black;
+    }
+</style>

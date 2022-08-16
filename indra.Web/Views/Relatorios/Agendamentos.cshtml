@@ -1,0 +1,109 @@
+﻿@{ ViewData["Title"] = "Relatório"; }
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+
+                        <h3 class="card-title"><i class="fa fa-print"></i> Histório de Agendamentos</h3>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <form method="post">
+                            <div class="form-group">
+                                <label class="control-label">Data início</label>
+                                <input class="form-control" type="date" name="dataInicio" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Data fim</label>
+                                <input class="form-control" type="date" name="dataFim" required />
+                            </div>
+                            <div class="form-group" id="situacao">
+                                <label class="control-label">Situação do agendamento</label>
+                                <select class="form-control">
+                                    <option value="0">Todos</option>
+                                    <option value="1">Aguardando</option>
+                                    <option value="2">Concluído</option>
+                                    <option value="3">Cancelado</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class=" col col-xs-12">
+                                    <button type="submit" id="btnPDF" class="btn btnRoxo pull-right">
+                                        <i class="fa fa-print"></i>
+                                        Imprimir
+                                    </button>
+
+                                    <a asp-controller="Home" asp-action="Painel" class="btn btnCinza pull-left">
+                                        <i class="fa fa-arrow-left"></i>
+                                        Voltar
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+    @@media (max-width: 768px) {
+        #botaoResponsivo {
+            float: left;
+        }
+
+        .pull-right {
+            float: left;
+        }
+
+        .pull-left {
+            float: right;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+        }
+    }
+    .form-control {
+        background-image: linear-gradient(to top, #36b9cc 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+        color: black;
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #36b9cc 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #36b9cc;
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #36b9cc 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #36b9cc 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    select {
+        margin-top: 0px;
+    }
+
+    #situacao {
+        margin-top: 15px;
+    }
+
+    .btn-secondary {
+        background-color: #5a5c69;
+    }
+</style>

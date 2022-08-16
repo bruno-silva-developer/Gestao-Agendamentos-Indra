@@ -1,0 +1,72 @@
+﻿@{ ViewData["Title"] = "Relatório"; }
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+
+                        <h3 class="card-title"><i class="fa fa-print"></i> Lista de Clientes</h3>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <form method="post">
+                            <div class="row">
+                                <div class=" col col-xs-12">
+                                    <button type="submit" id="btnPDF" class="btn btnRoxo pull-right">
+                                        <i class="fa fa-print"></i>
+                                        Imprimir
+                                    </button>
+
+                                    <a asp-controller="Home" asp-action="Painel" class="btn btnCinza pull-left">
+                                        <i class="fa fa-arrow-left"></i>
+                                        Voltar
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+    @@media (max-width: 768px) {
+        #botaoResponsivo {
+            float: left;
+        }
+
+        .pull-right {
+            float: left;
+        }
+
+        .pull-left {
+            float: right;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid #e3e6f0;
+        border-radius: .35rem;
+        margin: 0 0 260px;
+    }
+</style>

@@ -1,0 +1,471 @@
+﻿@inject indra.Web.Bibliotecas.LoginPessoaFisica login
+
+@{
+    var usuario = login.GetUsuario();
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=”content-type” content="text/html;" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="indra, gestão, estética, beleza" />
+    <meta name="author" content="Bruno Carlos da Silva, Emanuel Ítalo Ferreira Menezes">
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" type="image/png" href="~/images/logo-indra.ico">
+
+    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <script src="~/sweetAlert/sweetalert.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="~/sweetAlert/sweetalert.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href=@Url.Content("~/css/site.css") rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js" type="text/javascript" asp-append-version="true"></script>
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script src=@Url.Content("~/assets/js/core/bootstrap-material-design.min.js")></script>
+    <script src=@Url.Content("~/assets/js/plugins/perfect-scrollbar.jquery.min.js")></script>
+    <script src=@Url.Content("~/assets/js/core/jquery.min.js")></script>
+    <script src=@Url.Content("~/assets/js/core/popper.min.js")></script>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                <div class="sidebar-brand-icon rotate-n-10">
+                    <img src="~/images/logo-indra.png" height="35px" width="36px" />
+                </div>
+                <div class="sidebar-brand-text mx-3">INDRA</div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            @if (login.GetUsuario() != null && login.GetUsuario().PessoaFisica.Tipo == indra.Models.Enums.eTipo.Cliente)
+            {
+                <!-- Nav Item - Painel Cliente -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="TelaPrincipal" asp-controller="Home">
+                        <i style="color:black" class="fas fa-home"></i>
+                        <span>Tela Principal</span>
+                    </a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Cliente" asp-controller="Historico">
+                        <i style="color:black" class="far fa-calendar-times"></i>
+                        <span>Histórico</span>
+                    </a>
+                </li>
+            }
+            @if (login.GetUsuario() != null && login.GetUsuario().PessoaFisica.Tipo == indra.Models.Enums.eTipo.Profissional)
+            {
+                <!-- Nav Item - Painel Profissional -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Painel" asp-controller="Home">
+                        <i style="color:black" class="fas fa-home"></i>
+                        <span>Painel</span>
+                    </a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Agendamentos" asp-controller="Relatorios">
+                        <i style="color:black" class="far fa-calendar-times"></i>
+                        <span>Agendamentos</span>
+                    </a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Clientes" asp-controller="Relatorios">
+                        <i style="color:black" class="far fa-user"></i>
+                        <span>Lista de Clientes</span>
+                    </a>
+                </li>
+            }
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btnAzul d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Usuário -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span style="color:black" class="mr-2 d-none d-lg-inline small">@usuario.PessoaFisica.Nome</span>
+                                <img class="img-profile rounded-circle"
+                                     src="~/images/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - Opções de Usuário -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a style="color:black" asp-controller="Home" asp-action="Perfil" class="dropdown-item">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2" style="color:black"></i>
+                                    Perfil
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a style="color:black" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2" style="color:black"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+            </div>
+
+            <div class="main-panel" style="padding: 15px;">
+
+                <main>
+                    @RenderBody()
+                </main>
+
+            </div>
+
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            @*<footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>&copy; @DateTime.Now.Year - Gestão de Estética</span>
+                        </div>
+                    </div>
+                </footer>*@
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deseja realmente sair ? </h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Voltar">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Selecione "Logout" se você está pronto para sair.</div>
+                <div class="modal-footer">
+                    <button class="btn btnVermelho pull-left">Cancelar</button>
+                    <a class="btn btnAzul pull-right" asp-action="Logout" asp-controller="Account">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="~/vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="~/js/demo/chart-area-demo.js"></script>
+    <script src="~/js/demo/chart-pie-demo.js"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+
+    .btn:hover {
+        color: white;
+    }
+
+    .mr-2, .mx-2 {
+        margin-right: 0.5rem !important;
+        font-size: inherit;
+    }
+
+    .navbar .collapse .navbar-nav .nav-item .nav-link {
+        position: relative;
+        padding: 10px 15px;
+        font-weight: 400;
+        font-size: 12px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        line-height: 20px;
+        margin-left: 5px;
+        color: #343A40;
+    }
+
+    #accordionSidebar {
+        display: block;
+    }
+
+    @@media (min-width: 768px) {
+        .dropdown-menu .dropdown-item, .dropdown-menu li > a {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            color: black;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        #accordionSidebar {
+            /*display: block;
+            overflow: hidden;*/
+        }
+        .sidebar.toggled {
+            width: 0 !important;
+            overflow: hidden;
+        }
+    }
+
+    select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+
+    th {
+        text-align: center !important;
+        text-decoration: solid !important;
+    }
+
+    .titulo {
+        background-color: #6c757d7d !important;
+        border-radius: 3px !important;
+        padding: 15px !important;
+        box-shadow: none !important;
+    }
+
+    .btnAzul {
+        background-color: #36b9cc;
+        border: 0px;
+    }
+
+    .btnVerde {
+        background-color: #28a745;
+        border: 0px;
+    }
+
+    .btnRoxo {
+        background-color: #6f42c1;
+        border: 0px;
+    }
+
+    .btnVermelho {
+        background-color: #dc3545;
+        border: 0px;
+    }
+
+    .btnCinza {
+        background-color: #5a5c69;
+        border: 0px;
+    }
+
+    .btnAzul:hover {
+        background-color: #36b9cc;
+        border: 0px;
+    }
+
+    .btnVerde:hover {
+        background-color: #00a007;
+        border: 0px;
+    }
+
+    .btnRoxo:hover {
+        background-color: #6f42c1;
+        border: 0px;
+    }
+
+    .btnCinza:hover {
+        background-color: #5a5c69;
+        border: 0px;
+    }
+
+    .btnBlock {
+        background-color: #ff00007d;
+        color: white;
+        border: 0px;
+    }
+
+    .nav-link {
+        color: #000;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+
+    .sidebar .nav li:hover > a,
+    .sidebar .nav li .dropdown-menu a:hover,
+    .sidebar .nav li .dropdown-menu a:focus,
+    .sidebar .nav li.active > [data-toggle="collapse"] {
+        background-color: #00bcd4;
+        border: 0px;
+        color: white;
+        box-shadow: none;
+    }
+
+    .sidebar .nav li.active > a, .sidebar .nav li.active > a i {
+        color: #000;
+    }
+
+    a.nav-link {
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .sidebar .nav li a, .sidebar .nav li .dropdown-menu a {
+        margin: 10px 15px 0;
+        border-radius: 3px;
+        color: #000000;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-transform: capitalize;
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    .dropdown-menu .dropdown-item:hover,
+    .dropdown-menu .dropdown-item:focus,
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus,
+    .dropdown-menu a:active {
+        background-color: #00bcd4;
+        border: 0px;
+        color: white;
+        box-shadow: none;
+    }
+
+    .perfect-scrollbar-on .sidebar,
+    .perfect-scrollbar-on .main-panel {
+        border: 0px;
+    }
+
+    .sidebar .sidebar-wrapper {
+        border: 0px;
+    }
+
+    .sidebar .logo {
+        border: 0px;
+    }
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #ffffff;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .35rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .sidebar #sidebarToggle {
+        width: 2.5rem;
+        height: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        margin-top: 335px;
+    }
+
+    .scroll-to-top {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        display: none;
+        width: 3.75rem;
+        height: 2.75rem;
+        text-align: center;
+        color: #000;
+        background: rgb(67 67 68 / 50%);
+        line-height: 70px; 
+    }
+
+    body {
+        margin: 0;
+        font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #000000;
+        text-align: left;
+        background-color: #fff;
+    }
+
+    .bg-gradient-primary {
+        background-color: #36b9cc;
+        background-image: linear-gradient( 180deg,#36b9cc 10%,#36b9cc 100%);
+        background-size: cover;
+    }
+
+    .sidebar hr.sidebar-divider {
+        margin: 0 1rem 0rem;
+    }
+</style>

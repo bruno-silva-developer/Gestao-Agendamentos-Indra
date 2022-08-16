@@ -1,0 +1,295 @@
+﻿@using indra.Models.Enums;
+@using indra.Models.DTO;
+@model IEnumerable<indra.Models.Servico>
+
+@{
+    ViewData["Title"] = "Serviço";
+    var lista = new List<eFiltro> { eFiltro.Todos, eFiltro.Ativos, eFiltro.Inativos }
+        .Select(c => new CodigoDescricaoDTO { Codigo = (int)c, Descricao = c.ToString() });
+    var selectList = new SelectList(lista, "Codigo", "Descricao");
+}
+
+@if (TempData["S_SER_C"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-success alert-dismissible fade show text-center" id="alert">
+        <strong>Sucesso! </strong> @TempData["S_SER_C"]
+    </div>
+}
+@if (TempData["S_SER_E"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-success alert-dismissible fade show text-center" id="alert">
+        <strong>Sucesso! </strong> @TempData["S_SER_E"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h2 class="card-title">
+                            <i class="fa fa-search"></i>Serviços
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <div class="btnPesquisa">
+                                    <span class="labelSearch">Pesquisar</span>
+                                    <br />
+                                    <input type="text" id="filtro" />
+                                    <button id="btnFiltro" class="pesquisaButton" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                                <br />
+                                <br />
+                                <div>
+                                    <span class="labelFilter">Filtro</span>
+                                    <br />
+                                    @Html.DropDownList("selectAtivos", selectList, new { @class = "select" })
+                                </div>
+                                <a asp-action="Criar" class="adicaoServico">
+                                    <i class="fa fa-plus-circle"></i> Adicionar Serviço
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                @if (Model != null && Model.Any())
+                                {
+                                    <div id="divTabelaExibicao">
+                                        @Html.Partial("_TabelaServicosPartial", Model)
+                                    </div>
+                                }
+                                else
+                                {
+                                    <br />
+                                    <br />
+                                    <div class="alert alert-info alert-dismissible fade show text-center" id="alert">
+                                        Não existe nenhum serviço cadastrado.
+                                    </div>
+                                }
+
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+
+    .labelFilter {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #212529;
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .labelSearch {
+        color: black;
+        margin-left: -168px;
+    }
+
+    a:hover, a:focus {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .adicaoServico {
+        background-color: #00bcd4;
+        float: right;
+        position: relative;
+        padding: 12px 30px;
+        margin: 0.3125rem 0px;
+        font-size: .75rem;
+        font-weight: 400;
+        line-height: 1.428571;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        cursor: pointer;
+        outline: 0;
+        transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: box-shadow, transform;
+        color: #fff;
+        box-shadow: 0 2px 2px 0 rgb(153 153 153 / 14%), 0 3px 1px -2px rgb(153 153 153 / 20%), 0 1px 5px 0 rgb(153 153 153 / 12%);
+    }
+
+    .pesquisaButton {
+        color: white;
+        border-radius: 0.2rem;
+        height: 31px;
+        width: 36px;
+        border: 0;
+        margin-left: 13px;
+        background-color: #00bcd4;
+    }
+
+    #filtro {
+        margin: 0 -15px;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+
+    .btnPesquisa {
+        display: inline-block;
+        font-weight: 500;
+        color: #212529;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: 0.4rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        margin-top: -30px;
+    }
+
+    .select {
+        background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat hsl(0deg 0% 91%);
+        background-color: #00bcd4;
+        background-position: 75px center;
+        border: 0px;
+        float: left;
+        padding: 12px 50px 12px 7px;
+        margin: 0.3125rem 0px;
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1.428571;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        cursor: pointer;
+        border-radius: 0.2rem;
+        outline: 0;
+        transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #fff;
+    }
+    .btnVermelho:hover {
+        background-color: #dc3545;
+        border: 0px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+
+    $(function () {
+        $("#filtro").keyup(function () {
+            var texto = $(this).val();
+
+            $("#itens").css("display", "block");
+            $("#itens").each(function () {
+                if ($(this).text().indexOf(texto) < 0)
+                    $(this).css("display", "none");
+                if ($(this).text().toUpperCase().indexOf(texto.toUpperCase()) < 0)
+                    $(this).css("display", "none");
+            });
+        });
+    });
+
+    var excluirServico = function (id) {
+        Swal.fire({
+            title: 'Atenção!',
+            text: "Tem certeza que deseja excluir esse serviço?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Não'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var url = '/Servicos/ConfirmarExclusao';
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: { id }
+                }).done(function (data) {
+
+                    if (data.excluido) {
+                        Swal.fire({
+                            title: 'Sucesso!',
+                            html: data.mensagem,
+                            icon: 'success'
+                        }).then(function () {
+                            window.location = '/Servicos/Index';
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            title: 'Ops!',
+                            html: data.mensagem,
+                            icon: 'error'
+                        })
+                    }
+
+                });
+            }
+
+        })
+    }
+</script>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<indra.Models.PessoaFisica>
+
+<div id="divTabela">
+    <div class="col col-xs-12">
+        <table id="tabela" class="table table-bordered table-hover" style="width: 100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th width="3%">
+                        ID
+                    </th>
+                    <th width="35%">
+                        Nome
+                    </th>
+                    <th width="13%">
+                        CPF
+                    </th>
+                    <th width="15%">
+                        Email
+                    </th>
+                    <th width="5%">
+                        Criado em
+                    </th>
+                    <th width="6%">
+                        Ativo
+                    </th>
+                    <th width="15%">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="itens" class="@(item.Ativo ? "ativo" : "inativo")">
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.Cpf)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td style="text-align:center">
+                            @item.DtCriacao.ToShortDateString()
+                        </td>
+                        <td style="text-align:center">
+                            @if (item.Ativo)
+                            {<i class="fa fa-check text-success"></i> }
+                            else
+                            { <i class="fa fa-times text-danger"></i>}
+                        </td>
+                        <td style="text-align:center">
+                            <a asp-action="Editar" asp-route-id="@item.Id" class="btn btnCinza btn-sm btn-squared-default "><i class="fa fa-edit"></i></a>
+                            @if (item.Ativo)
+                            {
+                                <button onclick="desativarProfissional(@item.Id)" class="btn btnVermelho btn-sm btn-squared-default"><i class="fa fa-ban"></i></button>
+                            }
+                            else
+                            {
+                                <button onclick="ativarProfissional(@item.Id)" class="btn btnVerde btn-sm btn-squared-default"><i class="fa fa-unlock-alt"></i></button>
+                            }
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="clearfix"></div>

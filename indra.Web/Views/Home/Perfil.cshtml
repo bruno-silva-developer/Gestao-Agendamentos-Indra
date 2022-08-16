@@ -1,0 +1,261 @@
+﻿@inject indra.Web.Bibliotecas.LoginPessoaFisica login
+
+@{
+    ViewData["Title"] = "Perfil";
+    var usuario = login.GetUsuario();
+}
+
+@if (TempData["S_ATUA_PERFIL"] != null)
+{
+    <!-- Error Alert -->
+    <div class="alert alert-success alert-dismissible fade show text-center" id="alert">
+        <strong>Sucesso!</strong> @TempData["S_ATUA_PERFIL"]
+    </div>
+}
+@if (TempData["S_ATRI_SER"] != null)
+{
+    <!-- Warning Alert -->
+    <div class="alert alert-success alert-dismissible fade show text-center" id="alert">
+        @TempData["S_ATRI_SER"]
+    </div>
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="card">
+                    <div class="card-header card-header-primary titulo">
+                        <h3 class="card-title"><i class="fa fa-user-circle"></i> Perfil</h3>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col col-xs-12">
+
+                                @if (login.GetUsuario().PessoaFisica.Tipo == indra.Models.Enums.eTipo.Profissional)
+                                {
+                                    <a asp-controller="Atribuicao" asp-action="Servico" id="botaoResponsivo"
+                                       class="btn btn-default btnAzul pull-right" style="background-color: #00bcd4;border: 0px">
+                                        <i class="fa fa-plus-circle"></i>
+                                        Atribuição de Serviço
+                                    </a>
+                                    <br />
+                                }
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="tipo" class="col col-xs-12">
+                                <label class="label">Tipo de Usuário: </label>
+                                <div class="dadosUsuario">
+                                    @*<span id="perfil" class="col col-xs-12">  @usuario.PessoaFisica.Tipo</span>*@
+                                    <span id="perfil" class="col col-xs-12">  @ViewBag.Tipo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="nome" class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Nome: </label>
+                                <div class="dadosUsuario">
+                                    @*<span id="perfil" class="col col-xs-12">  @usuario.PessoaFisica.Nome</span>*@
+                                    <span id="perfil" class="col col-xs-12">  @ViewBag.Nome</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="dtNascimento" class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Data de Nascimento: </label>
+                                <div class="dadosUsuario">
+                                    @*<span id="perfil" class="col col-xs-12">  @usuario.PessoaFisica.DtNascimento.ToString("dd/MM/yyyy")</span>*@
+                                    <span id="perfil" class="col col-xs-12">  @ViewBag.DtNascimento</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="sexo" class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Sexo: </label>
+                                <div class="dadosUsuario">
+                                    @*<span id="perfil" class="col col-xs-12">  @usuario.PessoaFisica.Sexo</span>*@
+                                    <span id="perfil" class="col col-xs-12">  @ViewBag.Sexo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="cpf" class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">CPF: </label>
+                                <div class="dadosUsuario">
+                                    @*<span id="perfil" class="col col-xs-12">  @usuario.PessoaFisica.Cpf</span>*@
+                                    <span id="perfil" class="col col-xs-12">  @ViewBag.Cpf</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="celular" class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Celular: </label>
+                                <div class="dadosUsuario">
+                                    @*<span id="perfil" class="col col-xs-12">  @usuario.PessoaFisica.Celular</span>*@
+                                    <span id="perfil" class="col col-xs-12">  @ViewBag.Celular</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="email" class="row">
+                            <div class="col col-xs-12">
+                                <label class="label">Email: </label>
+                                <div class="dadosUsuario">
+                                    @*<span id="perfil" class="col col-xs-12">  @usuario.PessoaFisica.Email</span>*@
+                                    <span id="perfil" class="col col-xs-12">  @ViewBag.Email</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <a asp-controller="Home" asp-action="AtualizarPerfil" id="botaoResponsivo"
+                           class="btn btn-default btnAzul pull-right" style="background-color: #00bcd4;border: 0px">
+                            <i class="fa fa-refresh"></i>
+                            Atualizar Perfil
+                        </a>
+
+                        @if (login.GetUsuario().PessoaFisica.Tipo == indra.Models.Enums.eTipo.Cliente)
+                        {
+                            <a asp-action="TelaPrincipal" asp-controller="Home" class="btn btnCinza pull-left">
+                                <i class="fa fa-arrow-left"></i>
+                                Voltar
+                            </a>
+                        }
+                        else if (login.GetUsuario().PessoaFisica.Tipo == indra.Models.Enums.eTipo.Profissional)
+                        {
+                            <a asp-action="Painel" asp-controller="Home" class="btn btnCinza pull-left">
+                                <i class="fa fa-arrow-left"></i>
+                                Voltar
+                            </a>
+                        }
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #wrapper #content-wrapper #content {
+        flex: 0 0 auto;
+    }
+    @@media (max-width: 768px) {
+        #botaoResponsivo {
+            float: left;
+        }
+
+        .pull-right {
+            float: left;
+        }
+
+        .pull-left {
+            float: right;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    #perfil {
+        margin-left: -15px;
+        font-family: 'Arial','sans-serif';
+        color: #36b9cc;
+    }
+
+    .dadosUsuario {
+        margin-left: 3px;
+        font-weight: 700;
+        font-size: larger;
+    }
+
+    .col-md label {
+        color: black;
+    }
+
+    .form-check, label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 10px;
+    }
+
+    element.style {
+        background-color: #00bcd4;
+        border: 0px;
+    }
+
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+
+    [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+        cursor: pointer;
+    }
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        color: #fcfcfd;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .35rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .btn-link {
+        display: inline-block;
+        font-weight: 400;
+        color: #000000;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+    }
+
+    body {
+        margin: 0;
+        font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #ffffff;
+        text-align: left;
+        background-color: #fff;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+</script>

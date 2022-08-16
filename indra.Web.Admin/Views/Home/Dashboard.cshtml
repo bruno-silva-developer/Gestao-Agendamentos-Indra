@@ -1,0 +1,93 @@
+﻿@using indra.Models.DTO;
+@model DashboardDTO
+
+@{ 
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-stats">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="fa fa-address-card"></i>
+                </div>
+                <p class="card-category">Profissionais</p>
+                <h3 class="card-title">@Model.QtdProfissionais</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a asp-controller="Profissionais" asp-action="Index"><i class="fa fa-arrow-circle-o-right"></i> Ir para Profissionais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+                <div class="card-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <p class="card-category">Clientes</p>
+                <h3 class="card-title">@Model.QtdClientes</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a asp-controller="Clientes" asp-action="Index"><i class="fa fa-arrow-circle-o-right"></i> Ir para Clientes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon">
+                    <i class="fa fa-handshake-o"></i>
+                </div>
+                <p class="card-category">Serviços</p>
+                <h3 class="card-title">@Model.QtdServicos</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a asp-controller="Servicos" asp-action="Index"><i class="fa fa-arrow-circle-o-right"></i> Ir para Serviços</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+                <div class="card-icon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <p class="card-category">Agendamentos</p>
+                <h3 class="card-title">@Model.QtdAgendamentos</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a asp-controller="Agendamentos" asp-action="Index"><i class="fa fa-arrow-circle-o-right"></i> Ir para Agendamentos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="card card-stats">
+            <div class="card-header card-header-primary card-header-icon">
+                <div class="card-icon">
+                    <i class="fa fa-address-card"></i>
+                </div>
+                <p class="card-category">Administradores</p>
+                <h3 class="card-title">@Model.QtdAdministradores</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a asp-controller="Administradores" asp-action="Index"><i class="fa fa-arrow-circle-o-right"></i> Ir para Administradores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

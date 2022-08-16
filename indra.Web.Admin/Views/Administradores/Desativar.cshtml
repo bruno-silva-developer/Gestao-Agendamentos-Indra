@@ -1,0 +1,103 @@
+﻿@model indra.Models.PessoaFisica
+
+@{
+    var error = ViewBag.error;
+    ViewData["Title"] = "Administrador";
+}
+
+<h1>Desativar Administrador</h1>
+
+<h3>Deseja realmente desativar esse administrador?</h3>
+<div>
+
+    <hr />
+    @if (TempData["E_ADM_D"] != null)
+    {
+        <!-- Error Alert -->
+        <div class="alert alert-danger alert-dismissible fade show text-center" id="alert">
+            <strong>Erro! </strong> @TempData["E_ADM_D"]
+        </div>
+    }
+
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DtCriacao)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DtCriacao)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+    </dl>
+
+    <form asp-action="ConfirmarDesativacao">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Desativar" class="btn btn-danger" />
+
+    </form>
+    <a asp-action="Index">
+        <button class="btn btn-primary mt-2" style="background: linear-gradient( 60deg, #00bcd4, #216cca);border: 0px">Cancelar</button>
+    </a>
+</div>
+
+
+<style>
+
+    .col-md label {
+        color: black;
+    }
+
+    .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control, .is-focused .form-control {
+        background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .is-focused [class^='bmd-label'], .is-focused [class*=' bmd-label'] {
+        color: #00bcd4;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        height: calc(2.4375rem + 2px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+
+    .form-control:read-only {
+        background-image: linear-gradient(to top, #00bcd4 1px, rgba(210, 210, 210, 0) 1px), linear-gradient(to top, #333333 1px, rgba(210, 210, 210, 0) 1px);
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $("#alert").hide();
+        $("#alert").fadeTo(3000, 600).slideUp(600, function () {
+            $("#alert").slideUp(600);
+        });
+    })
+</script>
